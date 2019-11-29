@@ -1,0 +1,55 @@
+﻿The company's owner wishes to setup a table tennis area in the office. To that end, various components (the table itself, paddles, and balls) need to be bought.
+
+Using polymorphism and the provided abstract class "Item", design classes for "Paddle", "Table" and "Ball". In the main method, you must populate the "items" list with 1 table, 4 paddles and 20 balls. 
+
+In the console, write the full price (including tax) and weight of each individual item from the items list. 
+For example, an output could look as follows :
+(table) 100 $  100 kg
+(paddle) 28.75 $  0.5 kg
+(paddle) 28.75 $  0.5 kg
+(paddle) …
+(ball) 1.1 $  0.01 kg
+(ball) 1.1 $  0.01 kg
+(ball) 1.1 $  0.01 kg
+(ball) 1.1 $  0.01 kg
+(ball) 1.1 $  0.01 kg
+(ball) …
+
+Requirements:
+	- A table has a base price of 100, does not have a tax, and weighs 100kg
+	- A paddle has a base price of 25, a 15% tax, and weighs 0.5kg
+	- A ball has a base price of 1, a 10% tax, and weighs 0.01kg
+
+IMPORTANT: Please keep your code before going to the next question, as you will be reusing it.
+
+Feel free to use visual studio or a tool such as fiddle to develop your solution.  
+
+Fiddle link with starting code: https://dotnetfiddle.net/DprwaF
+
+Starting code :
+
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        List<Item> items = new List<Item>();
+	
+	//items contains all the items to buy
+	//add the table, paddle and balls with the required quantities
+
+        //Display the price of each item in items
+	
+        Console.ReadLine();
+    }
+}
+
+public abstract class Item
+{
+    protected int price;
+    protected float weight;
+    abstract public float getFullPrice();
+    public float Weight { get {return weight;} }
+}

@@ -1,0 +1,61 @@
+﻿Using the code you created for the previous question, implement the visitor pattern to gather the total weight and total amount for the items. When doing the implementation, the Visitor you create should keep track of the total amount and total weight for items visited.
+If you do not know about the Visitor pattern, feel free to take some time to read about it.
+
+Requirements:
+	- When visiting a table, we add a 10% shipping fee of the table full price. This is applicable for each visited table.
+	- When visiting a ball, we do not have any extra cost.
+	- When visiting a paddle, we give a flat discount of 0.5 from the total amount. This is applicable for each visited ball.
+	
+Example output:
+The cart has a total cost of ___ and weighs ___ kg.
+
+Feel free to use Visual Studio or DotNetFiddle or equivalent to develop your answer.
+
+Below is the code provided from the previous question, plus some new hints. You can start from scratch or start from the code you did for the previous question.
+
+Fiddle link with starting code: https://dotnetfiddle.net/snGouk
+
+Starting code (does not compile) :
+
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        List<Item> items = new List<Item>();
+	
+	//items contains all the items to buy
+	//add the table, paddle and balls with the required quantities
+
+        //Display the price of each item
+	
+        Console.ReadLine();
+    }
+}
+
+
+Public interface IVisitable{
+	Void Accept(IVisitor v);
+}
+
+public class Cart : IVisitor
+{
+    private float totalPrice;
+    private float totalWeight;
+
+	public float TotalPrice { get {return totalPrice;}}
+	public float TotalWeight { get {return totalWeight; }}
+
+   
+   /*…*/
+}
+
+public abstract class Item : IVisitable
+{
+    protected int price;
+    protected float weight;
+    abstract public float getFullPrice();
+    public float Weight { get {return weight;} }
+}

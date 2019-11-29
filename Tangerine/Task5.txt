@@ -1,0 +1,101 @@
+﻿SQL Instructions
+
+The upcoming questions are based on the tables provided below. Please keep/copy them so you can refer back at any point when starting the questions.
+
+The data represents table tennis games between different players.
+
+You are free to use any SQL query language, be it standard SQL, T-SQL (MSSQL), MySQL, ORACLE, …
+
+We strongly advise to work in an environment such as SQL Management studio, SQLFiddle or equivalent to work on your answers. 
+
+Keep your answers in a separate file so you can easily copy them back should an issue occur with the online test.
+
+You may take as much time as necessary to answer the questions.
+
+There is no answer to provide for this question, you can safely skip to the next one.
+
+Score			
+ID	Game	Player	Score
+1	1	A	11
+2	1	B	7
+3	2	A	15
+4	2	C	13
+5	3	B	11
+6	3	D	9
+7	4	D	11
+8	4	A	5
+9	5	A	11
+10	6	B	11
+11	6	C	2
+12	6	D	5
+
+Game		
+ID	Winner	Date
+1	A	2017-01-02
+2	A	2016-05-06
+3	B	2017-12-15
+4	D	2016-05-06
+
+Player		
+ID	Name	LastName
+A	Phil	Watertank
+B	Eva	Smith
+C	John	Wick
+D	Bill	Bull
+E	Lisa	Owen
+
+Provided below is the schema and data, which can be used to create the tables and their content in an SQL Server instance, or using sqlfiddle.
+
+Fiddle link for MS SQL Server : http://sqlfiddle.com/#!18
+
+Schema usable for MS SQL (copy paste in sql fiddle or your instance):
+
+CREATE TABLE Game
+    ([ID] int, [Winner] varchar(1), [Date] datetime)
+;
+    
+INSERT INTO Game
+    ([ID], [Winner], [Date])
+VALUES
+    (1, 'A', '2017-01-02 00:00:00'),
+    (2, 'A', '2016-05-06 00:00:00'),
+    (3, 'B', '2017-12-15 00:00:00'),
+    (4, 'D', '2016-05-06 00:00:00')
+;
+
+
+CREATE TABLE Player
+    ([ID] varchar(1), [Name] varchar(4), [LastName] varchar(9))
+;
+    
+INSERT INTO Player
+    ([ID], [Name], [LastName])
+VALUES
+    ('A', 'Phil', 'Watertank'),
+    ('B', 'Eva', 'Smith'),
+    ('C', 'John', 'Wick'),
+    ('D', 'Bill', 'Bull'),
+    ('E', 'Lisa', 'Owen')
+;
+
+
+CREATE TABLE Score
+    ([ID] int, [Game] int, [Player] varchar(1), [Score] int)
+;
+    
+INSERT INTO Score
+    ([ID], [Game], [Player], [Score])
+VALUES
+    (1, 1, 'A', 11),
+    (2, 1, 'B', 7),
+    (3, 2, 'A', 15),
+    (4, 2, 'C', 13),
+    (5, 3, 'B', 11),
+    (6, 3, 'D', 9),
+    (7, 4, 'D', 11),
+    (8, 4, 'A', 5),
+    (9, 5, 'A', 11),
+    (10, 6, 'B', 11),
+    (11, 6, 'C', 2),
+    (12, 6, 'D', 5)
+;

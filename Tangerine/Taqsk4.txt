@@ -1,0 +1,26 @@
+﻿Fix the following "sayHi" function so the output shows "Hello World".
+You can add new code, but cannot remove nor comment any of the existing code.
+
+You can use JsFiddle to quickly setup an environment : https://jsfiddle.net/
+
+HTML:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<div id="result">
+</div>
+
+Javascript:
+var MyClass = function (x, y) {
+    "use strict";
+    
+    this.first = x;
+    this.second = y;
+};
+
+MyClass.prototype.sayHi = function () {
+  setTimeout(function () {
+    $("#result").html(this.first + " " + this.second);
+  }, 1);
+};
+
+var c = new MyClass("Hello", "World");
+c.sayHi();
