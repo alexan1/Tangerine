@@ -49,25 +49,22 @@ namespace Task3
 
     public class Cart : IVisitor
     {
-        private float totalPrice;
-        private float totalWeight;
-
-        public float TotalPrice { get { return totalPrice; } }
-        public float TotalWeight { get { return totalWeight; } }
+        public float TotalPrice { get; private set; }
+        public float TotalWeight { get; private set; }
 
         public void Visit(Item item)
         {
             var fullPrice = item.GetFullPrice();
 
-            this.totalPrice += (item is Table) ? fullPrice * 1.1f
+            this.TotalPrice += (item is Table) ? fullPrice * 1.1f
                             : (item is Paddle) ? fullPrice * 0.5f
                             : fullPrice;
-            this.totalWeight += item.Weight;
+            this.TotalWeight += item.Weight;
         }
 
         public override string ToString()
         {
-            return $"The cart has a total cost of {this.totalPrice} $ and weighs {this.totalWeight} kg.";
+            return $"The cart has a total cost of {this.TotalPrice} $ and weighs {this.TotalWeight} kg.";
         }
     }
 
