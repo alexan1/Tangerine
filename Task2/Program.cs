@@ -4,9 +4,8 @@ using System.Collections.Generic;
 public class Program
 {
     public static void Main()
-    {
-        Random rnd = new Random();
-        List<Item> items = new List<Item>
+    {        
+        var items = new List<Item>
         {
 
             //items contains all the items to buy
