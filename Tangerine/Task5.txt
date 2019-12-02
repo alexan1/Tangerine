@@ -99,3 +99,10 @@ VALUES
     (11, 6, 'C', 2),
     (12, 6, 'D', 5)
 ;
+
+
+answer
+
+select player.Name, avg(score.score) from Score join player on Score.Player = player.ID group by player.Name;
+
+select game.ID as 'game id', player.Name, Winner, score.score from game join score on game.ID = score.Game join Player on player.ID = Score.Player;
